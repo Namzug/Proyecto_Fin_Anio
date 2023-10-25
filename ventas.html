@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta
       name="description"
-      content="Automotora dedicada a la venta de los mejores autos del mercado - Nuevos y Usados"
-    />
+      content="Automotora dedicada a la venta de los mejores autos del mercado - Nuevos y Usados" />
     <meta name="author" content="Automotora VIP" />
 
     <title>Ventas | Automotora VIP</title>
@@ -20,8 +18,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
 
     <!-- CSS Font Awesome -->
     <link
@@ -29,31 +26,222 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      referrerpolicy="no-referrer" />
 
     <!-- CSS Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
       rel="stylesheet"
-      type="text/css"
-    />
+      type="text/css" />
 
     <!-- CSS Propio -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
+    <nav id="header" class="navbar navbar-expand-md fixed-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="header-logo"
+            src="img/automotora_vip_logo.png"
+            alt="AutoVIP" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#links"
+          aria-controls="links"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="links" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Venta 0km</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Venta Usados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#contacto-modal"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
       <h1>Ventas</h1>
+      <div class="row">
+        <div class="col-3">
+          <form action="">
+            <h3>Filter</h3>
+            <div class="mb-3">
+
+              <label for="disabledSelect" class="form-label"
+                >  <h4> Año</h4></label
+              >
+              <select id="disabledSelect" class="form-select">
+                <option>Seleccion...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <h4>Marca</h4>
+              <label for="disabledSelect" class="form-label"
+                ></label
+              >
+              <select id="disabledSelect" class="form-select">
+                <option>Seleccion...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+             
+              <label for="disabledSelect" class="form-label"
+                ><h4>Modelo</h4></label
+              >
+              <select id="disabledSelect" class="form-select">
+                <option> Seleccion...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              
+              <label for="disabledSelect" class="form-label"
+                ><H4>Estado</H4></label
+              >
+              <select id="disabledSelect" class="form-select">
+                <option>Seleccion...</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-warning">Warning</button>
+          </form>
+        </div>
+        <div class="col-9">
+          <div class="border-bottom mb-3">
+            
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+                <button class="btn btn-primary" type="submit">Button</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+              </div>
+            </div>
+          </div>
+          <div class="border-bottom mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+                <button class="btn btn-primary" type="submit">Button</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="border-bottom mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+                <button class="btn btn-primary" type="submit">Button</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="border-bottom mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p class="card-text">
+                    <small class="text-body-secondary"
+                      >Last updated 3 mins ago</small
+                    >
+                  </p>
+                </div>
+                <button class="btn btn-primary" type="submit">Button</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
     </div>
 
     <!-- Boostrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <!-- JS Propio -->
     <script src="js/app.js"></script>
