@@ -1,10 +1,10 @@
 /* Mi código CSS */
 
 body {
-    padding-top: 60px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /*****************************************************************
@@ -23,13 +23,13 @@ h6 {
 /*****************************************************************/
 
 #header {
-    background-color: #222;
-    border-bottom: 4px solid #ff8f00;
+  background-color: #222;
+  border-bottom: 4px solid #ff8f00;
 }
 
 #header-logo {
-    width: auto;
-    height: 20px;
+  width: auto;
+  height: 20px;
 }
 
 /*****************************************************************
@@ -39,35 +39,35 @@ h6 {
 /*****************************************************************/
 
 #home {
-    flex: 1;
+  flex: 1;
 }
 .home-intro {
-    border-bottom: 4px solid #ff8f00;
-    height: 36vw;
-    margin-bottom: 30px;
-    overflow: clip;
+  border-bottom: 4px solid #ff8f00;
+  height: 36vw;
+  margin-bottom: 30px;
+  overflow: clip;
 }
 
 #home h1 span {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 #home .card h4 {
-    font-size: 1.3rem;
-    margin: 0;
+  font-size: 1.3rem;
+  margin: 0;
 }
 
 #home hr {
-    margin: 1.9rem 0 2.5rem;
+  margin: 1.9rem 0 2.5rem;
 }
 
 @media (max-width: 767px) {
-    #home-intro {
-        height: 30vh;
-    }
-    #home h1 {
-        font-size: 1.8rem;
-    }
+  #home-intro {
+    height: 30vh;
+  }
+  #home h1 {
+    font-size: 1.8rem;
+  }
 }
 
 /*****************************************************************
@@ -77,36 +77,37 @@ h6 {
 /*****************************************************************/
 
 #footer {
-    border-top: 4px solid #ff8f00;
-    background-color: #222;
-    margin-top: 40px;
-    color: #eeeeee;
-    padding: 80px 0;
-    font-size: 1rem;
+  border-top: 4px solid #ff8f00;
+  background-color: #222;
+  margin-top: 40px;
+  color: #eeeeee;
+  padding: 80px 0;
+  font-size: 1rem;
 }
 
 #footer-logo {
-    width: auto;
-    height: 20px;
-    margin-bottom: 15px;
+  width: auto;
+  height: 20px;
+  margin-bottom: 15px;
 }
 
 #footer ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #footer ul li {
-    list-style: none;
-    margin-bottom: 6px;
+  list-style: none;
+  margin-bottom: 6px;
 }
 
 #footer ul li a,
 #footer ul li a:visited {
-    color: #eeeeee;
-    text-decoration: none;
+  color: #eeeeee;
+  text-decoration: none;
 }
 
+/* ventas */
 .filterButton {
   background-color: #ff8e01;
   border: #e47d00 solid 1px;
@@ -117,7 +118,6 @@ h6 {
   border: #c76d00 solid 1px;
   color: white;
 }
-/* card de ventas */
 
 .bi-star-fill {
   color: #ffc400;
@@ -136,4 +136,12 @@ h6 {
 .saleButton:hover {
   background-color: #3e813d;
   color: white;
+}
+.new {
+  background-color: #ff8e01;
+  top: 20px;
+  left: 20px;
+}
+.new:hover {
+  cursor: default;
 }
