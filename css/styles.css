@@ -109,38 +109,38 @@ h6 {
 
 /* ventas */
 .filterButton {
-    background-color: #ff8e01;
-    border: #e47d00 solid 1px;
-    color: white;
+  background-color: #ff8e01;
+  border: #e47d00 solid 1px;
+  color: white;
 }
 .filterButton:hover {
-    background-color: #d47500;
-    border: #c76d00 solid 1px;
-    color: white;
+  background-color: #d47500;
+  border: #c76d00 solid 1px;
+  color: white;
 }
 
 .bi-star-fill {
-    color: #ffc400;
+  color: #ffc400;
 }
 .bi-star-half {
-    color: #ffc400;
+  color: #ffc400;
 }
 .bi-star {
-    color: #ffc400;
+  color: #ffc400;
 }
 .saleButton {
-    color: white;
-    background-color: #58ba57;
-    border: rgb(9, 156, 9) solid 1px;
+  color: white;
+  background-color: #58ba57;
+  border: rgb(9, 156, 9) solid 1px;
 }
 .saleButton:hover {
-    background-color: #3e813d;
-    color: white;
+  background-color: #3e813d;
+  color: white;
 }
 
 .carousel-item {
-    object-fit: cover;
-    height: 36vw;
+  object-fit: cover;
+  height: 36vw;
 }
 .new {
   background-color: #ff8e01;
