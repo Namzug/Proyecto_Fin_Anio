@@ -120,3 +120,24 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
       marcas.append(opcionMarcas);
     }
   });
+
+const marcas = document.querySelector(".marcas");
+marcas.addEventListener("change", () => {
+  fetch(
+    "https://ha-front-api-proyecto-final.vercel.app/models?brand=" +
+      marcas.value
+  )
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (model) {
+      const modelos = document.querySelector(".modelo");
+      modelos.innerHTML = "";
+      for (let i = 0; i < model.length; i++) {
+        const opcionModelo = document.createElement("option");
+        const modeloActual = model[i];
+        opcionModelo.innerHTML = modeloActual;
+        modelos.append(opcionModelo);
+      }
+    });
+});
