@@ -43,11 +43,6 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                                             </p>
                                             |
                                             <p class="stars ms-1 my-0">
-                                                <i class="bi bi-star-fill"></i
-                                                ><i class="bi bi-star-fill"></i
-                                                ><i class="bi bi-star-fill"></i
-                                                ><i class="bi bi-star-half"></i
-                                                ><i class="bi bi-star"></i>
                                             </p>
                                         </div>
                                     </div>
@@ -86,7 +81,20 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
 
             let stars = document.querySelectorAll(".stars");
             for (let i = 0; i < car.rating; i++) {
-                const element = array[i];
+                stars[stars.length-1].innerHTML += `<i class="bi bi-star-fill"></i>`
+            }
+            
+            for (let i = 0; i < 5 - car.rating; i++) {
+                stars[stars.length-1].innerHTML += `<i class="bi bi-star"></i>`
             }
         }
+    })
+    .catch(function (err) {
+        console.error(err)
     });
+/* 
+    <i class="bi bi-star-fill"></i
+    ><i class="bi bi-star-fill"></i
+    ><i class="bi bi-star-fill"></i
+    ><i class="bi bi-star-half"></i
+    ><i class="bi bi-star"></i> */
