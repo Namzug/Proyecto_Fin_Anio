@@ -1,14 +1,14 @@
 let carsContainer = document.querySelector("#carsContainer");
 
 fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
-    .then(function (res) {
-        return res.json();
-    })
-    .then(function (cars) {
-        for (const car of cars) {
-            carsContainer.insertAdjacentHTML(
-                "beforeend",
-                `<div class="row border-bottom mb-4 pb-4">
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (cars) {
+    for (const car of cars) {
+      carsContainer.insertAdjacentHTML(
+        "beforeend",
+        `<div class="row border-bottom mb-4 pb-4">
                             <div class="col-12 col-lg-4">
                                 <div class="position-relative">
                                     <img
@@ -35,7 +35,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                                         </h3>
                                         <div class="datosDelAuto d-flex">
                                             <p class="year me-1 my-0">${
-                                                car.year
+                                              car.year
                                             }</p>
                                             |
                                             <p class="price mx-1 my-0">
@@ -78,15 +78,28 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
                                 </div>
                             </div>
                         </div>`
-            );
-            let nuevo = document.querySelectorAll(".spanNew");
-            if (car.status === 1) {
-                nuevo[nuevo.length - 1].classList.remove("d-none");
-            }
+      );
+      let nuevo = document.querySelectorAll(".spanNew");
+      if (car.status === 1) {
+        nuevo[nuevo.length - 1].classList.remove("d-none");
+      }
+    }
+  });
 
-            let stars = document.querySelectorAll(".stars");
-            for (let i = 0; i < car.rating; i++) {
-                const element = array[i];
-            }
-        }
-    });
+let año = document.querySelector(".año");
+
+for (let i = 1900; i <= 2023; i++) {
+  let opcion = document.createElement("option");
+  opcion.innerHTML = i;
+  año.append(opcion);
+}
+
+let estado = document.querySelector(".estado");
+let Nuevo = document.createElement("option");
+Nuevo.innerHTML = "Nuevo";
+estado.append(Nuevo);
+
+let Usado1 = document.querySelector(".estado");
+let Usado2 = document.createElement("option");
+Usado2.innerHTML = "Usado";
+estado.append(Usado2);
