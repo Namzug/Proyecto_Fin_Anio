@@ -150,3 +150,7 @@ h6 {
 .new:hover {
   cursor: default;
 }
+.alerta{
+  height: 100px;
+  display: none;
+}

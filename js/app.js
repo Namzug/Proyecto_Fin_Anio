@@ -181,5 +181,19 @@ filterButton.addEventListener("click", () => {
     .then(function (autoFiltrado) {
       carsContainer.innerHTML = "";
       carsCards(autoFiltrado);
+      const alerta = document.querySelector(".alerta")
+      if (carsContainer.innerHTML==="")
+        {
+    
+          carsContainer.innerHTML=`<div class="  alerta alert alert-danger d-flex align-items-center" role="alert">
+          <svg class=" bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+          <div>
+            No se han encontrado resultados
+          </div>
+        </div>`
+        }
+      
     });
-});
+    
+  });
+  
