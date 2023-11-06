@@ -118,7 +118,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
     console.error(err);
   });
 
-for (let i = 1900; i <= 2023; i++) {
+for (let i = 2023; i >= 1900; i--) {
   let opcion = document.createElement("option");
   opcion.innerHTML = i;
   año.append(opcion);
@@ -165,11 +165,13 @@ marcas.addEventListener("change", () => {
       })
       .then(function (model) {
         modelos.innerHTML = "";
-
+        const opcionModelo = document.createElement("option");
+        opcionModelo.innerHTML = "Seleccion...";
+        modelos.append(opcionModelo);
         for (let i = 0; i < model.length; i++) {
           const opcionModelo = document.createElement("option");
           const modeloActual = model[i];
-          opcionModelo.append(modeloActual);
+          opcionModelo.innerHTML = modeloActual;
           modelos.append(opcionModelo);
         }
       })
