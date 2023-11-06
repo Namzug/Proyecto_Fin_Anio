@@ -149,38 +149,59 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
   });
 
 marcas.addEventListener("change", () => {
-  fetch(
-    "https://ha-front-api-proyecto-final.vercel.app/models?brand=" +
-      marcas.value
-  )
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (model) {
-      const modelos = document.querySelector(".modelo");
-      modelos.innerHTML = "";
-      for (let i = 0; i < model.length; i++) {
-        const opcionModelo = document.createElement("option");
-        const modeloActual = model[i];
-        opcionModelo.append(modeloActual);
-        modelos.append(opcionModelo);
-      }
-    })
-    .catch(function (err) {
-      console.error(err);
-    });
+  if (marcas.value === "Seleccion...") {
+    const modelos = document.querySelector(".modelo");
+    const opcionModelo = document.createElement("option");
+    opcionModelo.innerHTML = "Seleccion...";
+    modelos.innerHTML = "";
+    modelos.append(opcionModelo);
+  } else {
+    fetch(
+      "https://ha-front-api-proyecto-final.vercel.app/models?brand=" +
+        marcas.value
+    )
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (model) {
+        modelos.innerHTML = "";
+
+        for (let i = 0; i < model.length; i++) {
+          const opcionModelo = document.createElement("option");
+          const modeloActual = model[i];
+          opcionModelo.append(modeloActual);
+          modelos.append(opcionModelo);
+        }
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+  }
 });
 
+let indicadorEstado = 0;
+estado.addEventListener("change", () => {
+  if (estado.value === "Nuevo") {
+    indicadorEstado = 1;
+  } else if (estado.value === "Usado") {
+    indicadorEstado = 0;
+  }
+});
 filterButton.addEventListener("click", () => {
-  fetch(
-    "https://ha-front-api-proyecto-final.vercel.app/cars?" +
-      "year=" +
-      año.value +
-      "&brand=" +
-      marcas.value +
-      "&model=" +
-      modelos.value
-  )
+  let consulta = "";
+  if (año.value !== "Seleccion...") {
+    consulta += "year=" + año.value;
+  }
+  if (marcas.value !== "Seleccion...") {
+    consulta += "&brand=" + marcas.value;
+  }
+  if (modelos.value !== "Seleccion...") {
+    consulta += "&model=" + modelos.value;
+  }
+  if (estado.value !== "Seleccion...") {
+    consulta += "&status=" + indicadorEstado;
+  }
+  fetch("https://ha-front-api-proyecto-final.vercel.app/cars?" + consulta)
     .then(function (autoFiltrado) {
       return autoFiltrado.json();
     })
@@ -192,8 +213,8 @@ filterButton.addEventListener("click", () => {
         carsContainer.innerHTML = `<div class="  alerta alert alert-danger d-flex align-items-center" role="alert">
           <svg class=" bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
           <div>
-            No se han encontrado resultados
-          </div>
+          No se han encontrado resultados
+        </div>
         </div>`;
       }
     })
