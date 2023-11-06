@@ -143,6 +143,9 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
       opcionMarcas.innerHTML = marca;
       marcas.append(opcionMarcas);
     }
+  })
+  .catch(function (err) {
+    console.error(err);
   });
 
 marcas.addEventListener("change", () => {
@@ -162,6 +165,9 @@ marcas.addEventListener("change", () => {
         opcionModelo.append(modeloActual);
         modelos.append(opcionModelo);
       }
+    })
+    .catch(function (err) {
+      console.error(err);
     });
 });
 
@@ -181,19 +187,17 @@ filterButton.addEventListener("click", () => {
     .then(function (autoFiltrado) {
       carsContainer.innerHTML = "";
       carsCards(autoFiltrado);
-      const alerta = document.querySelector(".alerta")
-      if (carsContainer.innerHTML==="")
-        {
-    
-          carsContainer.innerHTML=`<div class="  alerta alert alert-danger d-flex align-items-center" role="alert">
+      const alerta = document.querySelector(".alerta");
+      if (carsContainer.innerHTML === "") {
+        carsContainer.innerHTML = `<div class="  alerta alert alert-danger d-flex align-items-center" role="alert">
           <svg class=" bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
           <div>
             No se han encontrado resultados
           </div>
-        </div>`
-        }
-      
+        </div>`;
+      }
+    })
+    .catch(function (err) {
+      console.error(err);
     });
-    
-  });
-  
+});
