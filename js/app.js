@@ -188,6 +188,13 @@ estado.addEventListener("change", () => {
   }
 });
 filterButton.addEventListener("click", () => {
+  carsContainer.innerHTML = `
+  <div class="d-flex justify-content-center align-items-center contenedorCarga">
+    <div class="spinner-border carga" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+`;
   let consulta = "";
   if (año.value !== "Seleccion...") {
     consulta += "year=" + año.value;

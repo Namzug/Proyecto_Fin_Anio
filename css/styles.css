@@ -154,3 +154,11 @@ h6 {
   height: 100px;
   display: none;
 }
+
+.contenedorCarga {
+  margin-top: 10rem;
+}
+.carga {
+  width: 100px;
+  height: 100px;
+}
