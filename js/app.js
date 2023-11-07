@@ -4,6 +4,7 @@ const marcas = document.querySelector(".marcas");
 const modelos = document.querySelector(".modelo");
 const estado = document.querySelector(".estado");
 const filterButton = document.querySelector(".filterButton");
+const infocars = document.querySelector("#infoCars");
 
 function carsCards(cars) {
   const autos = cars;
@@ -57,15 +58,21 @@ function carsCards(cars) {
                                         class="btn saleButton"
                                         type="submit"
                                     >
-                                        <i class="bi bi-cart3"></i> Comprar
+                                        <i class=" bi bi-cart3"></i> Comprar
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn btn-outline-dark"
-                                    >
-                                        <i class="bi bi-plus-square"></i> Mas
-                                        información
-                                    </button>
+                                    <a
+                                      href="#"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#infoCars"
+                                      >
+                                      <button
+                                          type="button"
+                                          class="infoButton btn btn-outline-dark"
+                                      >
+                                          <i class=" bi bi-plus-square"></i> Mas
+                                          información
+                                      </button>
+                                      </a>
                                     <button
                                         type="button"
                                         class="btn btn-outline-dark"
@@ -108,6 +115,7 @@ function carsCards(cars) {
     const carCard = document.querySelector("#car");
   }
 }
+const infoButton = document.querySelector(".infoButton");
 
 fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
   .then(function (res) {
@@ -230,4 +238,7 @@ filterButton.addEventListener("click", () => {
     .catch(function (err) {
       console.error(err);
     });
+});
+infoButton.addEventListener("click", function () {
+  infocars.style.display = "block";
 });
