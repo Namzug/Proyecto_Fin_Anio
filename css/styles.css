@@ -150,7 +150,7 @@ h6 {
 .new:hover {
   cursor: default;
 }
-.alerta{
+.alerta {
   height: 100px;
   display: none;
 }
@@ -169,15 +169,20 @@ h6 {
 /* fotos Sobre Nosotros */
 .imgCard {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  padding-top: 150%;
+  background-size: cover;
+  background-position: center;
+}
+.guzman {
+  background-image: url("../img/about_us/Guzmán.png");
 }
 .avril {
-  position: absolute;
+  background-image: url("../img/about_us/avril.jpg");
 }
 .demian {
-  position: absolute;
-  top: -60px;
+  background-image: url("../img/about_us/yo.jfif");
 }
 .franco {
-  position: absolute;
+  background-image: url("../img/about_us/franco.jfif");
 }
