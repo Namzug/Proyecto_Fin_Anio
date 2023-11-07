@@ -1,5 +1,5 @@
 let carsContainer = document.querySelector("#carsContainer");
-const año = document.querySelector(".año");
+const anio = document.querySelector(".anio");
 const marcas = document.querySelector(".marcas");
 const modelos = document.querySelector(".modelo");
 const estado = document.querySelector(".estado");
@@ -121,7 +121,7 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
 for (let i = 2023; i >= 1900; i--) {
   let opcion = document.createElement("option");
   opcion.innerHTML = i;
-  año.append(opcion);
+  anio.append(opcion);
 }
 let Nuevo = document.createElement("option");
 Nuevo.innerHTML = "Nuevo";
@@ -198,8 +198,8 @@ filterButton.addEventListener("click", () => {
   </div>
 `;
   let consulta = "";
-  if (año.value !== "Seleccion...") {
-    consulta += "year=" + año.value;
+  if (anio.value !== "Seleccion...") {
+    consulta += "year=" + anio.value;
   }
   if (marcas.value !== "Seleccion...") {
     consulta += "&brand=" + marcas.value;

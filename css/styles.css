@@ -158,7 +158,26 @@ h6 {
 .contenedorCarga {
   margin-top: 10rem;
 }
+
+/* spin de carga */
+
 .carga {
   width: 100px;
   height: 100px;
+}
+
+/* fotos Sobre Nosotros */
+.imgCard {
+  position: relative;
+  overflow: hidden;
+}
+.avril {
+  position: absolute;
+}
+.demian {
+  position: absolute;
+  top: -60px;
+}
+.franco {
+  position: absolute;
 }
