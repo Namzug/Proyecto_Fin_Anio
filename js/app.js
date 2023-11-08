@@ -9,6 +9,22 @@ const infocars = document.querySelector("#infoCars");
 function carsCards(cars) {
   const autos = cars;
   for (const car of cars) {
+    let cont = 1;
+    let price = "";
+    let carPrice = String(car.price_usd);
+    for (let i = carPrice.length - 1; i >= 0; i--) {
+      price += carPrice[i];
+      if (cont === 3) {
+        price += ".";
+        cont = 0;
+      } else {
+        cont++;
+      }
+    }
+    let finalPrice = "USD ";
+    for (let i = price.length - 1; i >= 0; i--) {
+      finalPrice += price[i];
+    }
     carsContainer.insertAdjacentHTML(
       "beforeend",
       `<div class="row border-bottom mb-4 pb-4" id="car">
@@ -72,9 +88,7 @@ function carsCards(cars) {
                                             car.image
                                           }','${car.brand}','${car.model}','${
         car.year
-      }','${car.description}','${car.rating}','${car.price_usd}','${
-        car.status
-      }')">
+      }','${car.description}','${car.rating}','${finalPrice}','${car.status}')">
                                           <i class=" bi bi-plus-square" ></i> Mas
                                           información
                                       </button>
@@ -102,22 +116,8 @@ function carsCards(cars) {
       stars[stars.length - 1].innerHTML += `<i class="bi bi-star"></i>`;
     }
     let priceArr = document.querySelectorAll(".price");
-    let cont = 1;
-    let price = "";
-    let carPrice = String(car.price_usd);
-    for (let i = carPrice.length - 1; i >= 0; i--) {
-      price += carPrice[i];
-      if (cont === 3) {
-        price += ".";
-        cont = 0;
-      } else {
-        cont++;
-      }
-    }
-    priceArr[priceArr.length - 1].innerHTML = "USD ";
-    for (let i = price.length - 1; i >= 0; i--) {
-      priceArr[priceArr.length - 1].innerHTML += price[i];
-    }
+    priceArr[priceArr.length - 1].innerHTML = finalPrice;
+
     // const carCard = document.querySelector("#car");
   }
 }
@@ -259,21 +259,36 @@ function loadModalData(
   price_usd,
   status
 ) {
-  console.log(
-    image +
-      " " +
-      brand +
-      " " +
-      model +
-      " " +
-      year +
-      " " +
-      description +
-      " " +
-      rating +
-      " " +
-      price_usd +
-      " " +
-      status
-  );
+  modalInfoCars = document.querySelector("#modalInfoCars");
+  modalInfoCars.innerHTML = "";
+  ratingStars = "";
+  for (let i = 0; i < rating; i++) {
+    ratingStars += `<i class="bi bi-star-fill"></i>`;
+  }
+  for (let i = 0; i < 5 - rating; i++) {
+    ratingStars += `<i class="bi bi-star"></i>`;
+  }
+  let statusText = "";
+  if (status == 1) {
+    statusText = "El estado del vehiculo es nuevo";
+  } else {
+    statusText = "El estado del vehiculo es usado";
+  }
+  modalInfoCars.innerHTML = `<div class="card">
+  <img src="${image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${brand + " " + model}</h5>
+    <p class="card-text">${description}</p>
+    <ul class="list-group">
+      <li class="list-group-item">Valoracion ${ratingStars}</li>
+      <li class="list-group-item">Precio ${price_usd}</li>
+      <li class="list-group-item">${statusText}</li>
+      <li class="list-group-item">El vehiculo es del año ${"año " + year}</li>
+    </ul>
+    <a href="#" class="btn btn-primary "type="button"
+    class="btn-close"
+    data-bs-dismiss="modal"
+    aria-label="Close">Volver</a>
+  </div>
+</div>`;
 }
