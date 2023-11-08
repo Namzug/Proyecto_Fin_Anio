@@ -267,9 +267,9 @@ function loadModalData(
   }
   let statusText = "";
   if (status == 1) {
-    statusText = "El estado del vehiculo es nuevo";
+    statusText = "Estado del vehículo: Nuevo";
   } else {
-    statusText = "El estado del vehiculo es usado";
+    statusText = "Estado del vehículo: Usado";
   }
   modalInfoCars.innerHTML = `<div class="card">
   <img src="${image}" class="card-img-top" alt="...">
@@ -277,12 +277,12 @@ function loadModalData(
     <h5 class="card-title">${brand + " " + model}</h5>
     <p class="card-text">${description}</p>
     <ul class="list-group">
-      <li class="list-group-item">Valoracion ${ratingStars}</li>
-      <li class="list-group-item">Precio ${price_usd}</li>
+      <li class="list-group-item">Valoración: ${ratingStars}</li>
+      <li class="list-group-item">Precio: ${price_usd}</li>
       <li class="list-group-item">${statusText}</li>
-      <li class="list-group-item">El vehiculo es del año ${"año " + year}</li>
+      <li class="list-group-item">El vehículo es del año ${year}</li>
     </ul>
-    <a href="#" class="btn btn-primary "type="button"
+    <a href="#" class="mt-3 btn btn-primary" type="button"
     class="btn-close"
     data-bs-dismiss="modal"
     aria-label="Close">Volver</a>
