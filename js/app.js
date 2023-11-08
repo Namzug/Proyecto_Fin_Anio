@@ -67,9 +67,14 @@ function carsCards(cars) {
                                       >
                                       <button
                                           type="button"
-                                          class="infoButton btn btn-outline-dark"
-                                      >
-                                          <i class=" bi bi-plus-square"></i> Mas
+                                          class="infoButton btn btn-outline-dark" onClick="loadModalData('${
+                                            car.image
+                                          }','${car.brand}','${car.model}','${
+        car.year
+      }','${car.description}','${car.rating}','${car.price_usd}','${
+        car.status
+      }')">
+                                          <i class=" bi bi-plus-square" ></i> Mas
                                           información
                                       </button>
                                       </a>
@@ -112,7 +117,7 @@ function carsCards(cars) {
     for (let i = price.length - 1; i >= 0; i--) {
       priceArr[priceArr.length - 1].innerHTML += price[i];
     }
-    const carCard = document.querySelector("#car");
+    // const carCard = document.querySelector("#car");
   }
 }
 const infoButton = document.querySelector(".infoButton");
@@ -242,3 +247,32 @@ filterButton.addEventListener("click", () => {
 infoButton.addEventListener("click", function () {
   infocars.style.display = "block";
 });
+
+function loadModalData(
+  image,
+  brand,
+  model,
+  year,
+  description,
+  rating,
+  price_usd,
+  status
+) {
+  console.log(
+    image +
+      " " +
+      brand +
+      " " +
+      model +
+      " " +
+      year +
+      " " +
+      description +
+      " " +
+      rating +
+      " " +
+      price_usd +
+      " " +
+      status
+  );
+}
