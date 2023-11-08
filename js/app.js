@@ -61,6 +61,7 @@ function carsCards(cars) {
                                         <i class=" bi bi-cart3"></i> Comprar
                                     </button>
                                     <a
+                                      class="moreInfo"
                                       href="#"
                                       data-bs-toggle="modal"
                                       data-bs-target="#infoCars"

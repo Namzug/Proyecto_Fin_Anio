@@ -155,12 +155,15 @@ h6 {
   display: none;
 }
 
-.contenedorCarga {
-  margin-top: 10rem;
+.moreInfo {
+  text-decoration: none;
 }
 
 /* spin de carga */
 
+.contenedorCarga {
+  margin-top: 10rem;
+}
 .carga {
   width: 100px;
   height: 100px;
