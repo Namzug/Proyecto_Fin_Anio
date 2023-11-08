@@ -245,9 +245,6 @@ filterButton.addEventListener("click", () => {
       console.error(err);
     });
 });
-infoButton.addEventListener("click", function () {
-  infocars.style.display = "block";
-});
 
 function loadModalData(
   image,
