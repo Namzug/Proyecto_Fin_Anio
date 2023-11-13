@@ -163,10 +163,10 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
   });
 
 marcas.addEventListener("change", () => {
-  if (marcas.value === "Seleccion...") {
+  if (marcas.value === "Selección...") {
     const modelos = document.querySelector(".modelo");
     const opcionModelo = document.createElement("option");
-    opcionModelo.innerHTML = "Seleccion...";
+    opcionModelo.innerHTML = "Selección...";
     modelos.innerHTML = "";
     modelos.append(opcionModelo);
   } else {
@@ -180,7 +180,7 @@ marcas.addEventListener("change", () => {
       .then(function (model) {
         modelos.innerHTML = "";
         const opcionModelo = document.createElement("option");
-        opcionModelo.innerHTML = "Seleccion...";
+        opcionModelo.innerHTML = "Selección...";
         modelos.append(opcionModelo);
         for (let i = 0; i < model.length; i++) {
           const opcionModelo = document.createElement("option");
@@ -212,16 +212,16 @@ filterButton.addEventListener("click", () => {
   </div>
 `;
   let consulta = "";
-  if (anio.value !== "Seleccion...") {
+  if (anio.value !== "Selección...") {
     consulta += "year=" + anio.value;
   }
-  if (marcas.value !== "Seleccion...") {
+  if (marcas.value !== "Selección...") {
     consulta += "&brand=" + marcas.value;
   }
-  if (modelos.value !== "Seleccion...") {
+  if (modelos.value !== "Selección...") {
     consulta += "&model=" + modelos.value;
   }
-  if (estado.value !== "Seleccion...") {
+  if (estado.value !== "Selección...") {
     consulta += "&status=" + indicadorEstado;
   }
   fetch("https://ha-front-api-proyecto-final.vercel.app/cars?" + consulta)
