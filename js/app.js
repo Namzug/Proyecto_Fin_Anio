@@ -1,3 +1,4 @@
+//cards
 let carsContainer = document.querySelector("#carsContainer");
 const anio = document.querySelector(".anio");
 const marcas = document.querySelector(".marcas");
@@ -25,6 +26,7 @@ function carsCards(cars) {
     for (let i = price.length - 1; i >= 0; i--) {
       finalPrice += price[i];
     }
+
     carsContainer.insertAdjacentHTML(
       "beforeend",
       `<div class="row border-bottom mb-4 pb-4" id="car">
@@ -107,7 +109,7 @@ function carsCards(cars) {
     if (car.status === 1) {
       nuevo[nuevo.length - 1].classList.remove("d-none");
     }
-
+    //para poner las estrellas
     let stars = document.querySelectorAll(".stars");
     for (let i = 0; i < car.rating; i++) {
       stars[stars.length - 1].innerHTML += `<i class="bi bi-star-fill"></i>`;
@@ -115,6 +117,7 @@ function carsCards(cars) {
     for (let i = 0; i < 5 - car.rating; i++) {
       stars[stars.length - 1].innerHTML += `<i class="bi bi-star"></i>`;
     }
+    //para poner el precio
     let priceArr = document.querySelectorAll(".price");
     priceArr[priceArr.length - 1].innerHTML = finalPrice;
 
@@ -132,11 +135,15 @@ fetch("https://ha-front-api-proyecto-final.vercel.app/cars")
     console.error(err);
   });
 
+//fecha de año a año
 for (let i = 2023; i >= 1900; i--) {
   let opcion = document.createElement("option");
   opcion.innerHTML = i;
   anio.append(opcion);
 }
+//jasta aca
+
+// PARA QUE ASPARESCA NUEVO E USADO
 let Nuevo = document.createElement("option");
 Nuevo.innerHTML = "Nuevo";
 estado.append(Nuevo);
@@ -144,7 +151,9 @@ let Usado1 = document.querySelector(".estado");
 let Usado2 = document.createElement("option");
 Usado2.innerHTML = "Usado";
 estado.append(Usado2);
+//HASTA ACA
 
+//marcas para filtrar
 fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
   .then(function (res) {
     return res.json();
@@ -195,6 +204,7 @@ marcas.addEventListener("change", () => {
   }
 });
 
+//indicar el estado
 let indicadorEstado = 0;
 estado.addEventListener("change", () => {
   if (estado.value === "Nuevo") {
@@ -203,6 +213,9 @@ estado.addEventListener("change", () => {
     indicadorEstado = 0;
   }
 });
+
+// boton de filtrado
+
 filterButton.addEventListener("click", () => {
   carsContainer.innerHTML = `
   <div class="d-flex justify-content-center align-items-center contenedorCarga">
@@ -246,6 +259,7 @@ filterButton.addEventListener("click", () => {
     });
 });
 
+//modal
 function loadModalData(
   image,
   brand,
